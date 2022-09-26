@@ -1,0 +1,101 @@
+body {
+	background: url(../img/fondo.png);
+}
+
+
+.container{
+	background: #fff;
+}
+p{
+	font-family: 'Oswald', sans-serif;
+}
+
+a{
+	font-family: 'Josefin Sans', sans-serif;
+}
+body h1{
+	font-family: 'Press Start 2P', cursive;
+}
+body h2{
+	font-family: 'Bangers', cursive;
+}
+body h5{
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+header{
+background: url(..//img/bann.png) center center;
+background-repeat: no-repeat;
+background-size: 100%;
+height: 350px;
+color: #ff0000;
+}
+.mb-1{
+	font-family: 'Armata', sans-serif;
+	font-size: small;
+}
+
+.sucess{
+	background: #8AF2BE;
+	color: #1D362A;
+}
+.error{
+	background: #F7BCC4;
+	color: #361D21;
+}
+
+.err{
+	background: #F7BCC4;
+	color: #361D21;
+}
+
+#nav
+	{
+		padding: 1.50em 0em 0.50em 0em;
+	}
+
+		#nav > ul > li
+		{
+			display: inline-block;
+		}
+		
+			#nav > ul > li:last-child
+			{
+			}
+
+			#nav > ul > li > a,
+			#nav > ul > li > span
+			{
+				display: inline-block;
+				padding: 0.80em 1.5em;
+				letter-spacing: 0.06em;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-size: 1em;
+				color: #FE2E2E;
+				outline: 0;
+			}
+
+			#nav li.active a
+			{
+				background: #FE2E2E;
+				border-radius: 25px;
+				color: #FFF;
+			}
+
+			#nav > ul > li > ul
+			{
+				display: none;
+			}
+	
+/*********************************************************************************/
+/* Banner                                                                        */
+/*********************************************************************************/
+
+	#banner
+	{
+		position: relative;
+		background: #333 url(..//img/bann.png) no-repeat center;
+		background-size: cover;
+		color: #fff;
+	}

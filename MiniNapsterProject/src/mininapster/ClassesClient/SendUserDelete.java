@@ -1,0 +1,59 @@
+/*
+Vargas Hernández Carlo Ariel 
+2CM13
+Practica final
+Mininapster
+18/06/2021
+Programacion orientada a objetos
+*/
+package mininapster.ClassesClient;
+
+import java.net.*;
+import java.io.*;
+import mininapster.MyObject.User;
+
+public class SendUserDelete implements Runnable, Serializable{
+    
+    private Socket socket;
+    private ObjectOutputStream output;
+    private ObjectInputStream input;
+    private static final String host = "localhost";
+    private static int port = 5502;
+    private Thread thread;
+    private User user;
+    
+    public SendUserDelete(User user){
+        this.user = user;
+        try{
+            System.out.println("SendUserData constructor, creating a socket...");
+            
+            thread = new Thread(this);
+            
+            socket = new Socket(host, port);
+            output = new ObjectOutputStream(socket.getOutputStream());
+            //output.writeObject(user);
+            input = new ObjectInputStream(socket.getInputStream());
+            
+            thread.start();
+            System.out.println("Socket created successfully!");
+        } catch (IOException e){
+            System.err.println("Client.java, Client constructor IOException");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("Client.java, Client constructor Exception");
+            e.printStackTrace();
+        }
+    }
+    
+    @Override
+    public void run(){
+        System.out.println("run method Starts!...");
+        try{
+            output.writeObject(user);
+        } catch (Exception e) {
+            System.out.println("Client.java, run method Exception");
+            e.printStackTrace();
+        }
+    }
+    
+}
